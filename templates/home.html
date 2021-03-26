@@ -5,6 +5,10 @@
     <title>Countdown 2021</title>
     <link rel="stylesheet" href="static\style.css">
     <style>
+        body
+        {
+            background: url(/static/bg.jfif);
+        }
         .container
         {
             position: absolute;
@@ -15,9 +19,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #d9dddd;
+            background: url(/static/bg2.jfif);
+            
         }
-
         .container h2
         {
             text-align: center;
@@ -25,7 +29,6 @@
             line-height: 0.9em;
 
         }
-
         .container h2 span
         {
             display: block;
@@ -33,13 +36,11 @@
             letter-spacing: 6px;
             font-size: 0.4em;
         }
-
         .countdown
         {
             display: flex;
-            margin-top: 70px;            
+                      
         }
-
         .countdown div
         {
             position: relative;
@@ -53,7 +54,6 @@
             font-size: 3em;
             font-weight: 500;
         }
-
         .countdown div::before {
             content: '';
             position: absolute;
@@ -67,20 +67,20 @@
             line-height: 35px;
             font-weight: 300;
         }
-
-        .countdown #day::before {
+        .countdown #day::before
+        {
             content: 'Days';
         }
-
-        .countdown #hour::before {
+        .countdown #hour::before
+        {
             content: 'Hours';
         }
-
-        .countdown #minute::before {
+        .countdown #minute::before
+        {
             content: 'Minutes';
         }
-
-        .countdown #second::before {
+        .countdown #second::before
+        {
             content: 'Seconds';
         }
     </style>
@@ -97,13 +97,16 @@
     </div>
     <script type="text/javascript">
         var countDate = new Date('May 10, 2021 00:00:00').getTime();
-        function newMonth() {
+        function newMonth()
+        {
             var now = new Date().getTime();
             gap = countDate - now;
+            
             var second = 1000;
             var minute = second * 60;
             var hour = minute * 60;
             var day = hour * 24;
+
             var d = Math.floor(gap / (day));
             var h = Math.floor((gap % (day)) / (hour));
             var m = Math.floor((gap % (hour)) / (minute));
